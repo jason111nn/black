@@ -19,6 +19,19 @@
     </style>
 </head>
 <body>
-    
+    <script>
+        // 禁止右鍵
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        });
+
+        // 禁止 F12 和 Ctrl+Shift+I
+        document.onkeydown = function(e) {
+            if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+                e.preventDefault();
+                alert("禁止使用開發者工具！");
+            }
+        };
+    </script>
 </body>
 </html>
